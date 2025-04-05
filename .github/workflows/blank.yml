@@ -1,0 +1,43 @@
+name: Update Repo
+on:
+  schedule:
+    - cron: "*/40 * * * *"
+  workflow_dispatch:
+
+jobs:
+  update-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Remove old "Last update" line from README
+        run: |
+          sed -i '/\*\*Last update:\*\*/d' README.md
+
+      - name: Update README with Timestamp
+        run: |
+          echo -e "\n**Last update:** $(date '+%Y-%m-%d %H:%M:%S')" >> README.md
+
+      - name: Generate Sitemap
+        run: |
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
+          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
+          echo '  <url>' >> sitemap.xml
+          echo "    <loc>https://github.com/CarterRogue/Blood-Strike-Aimbot-ESP-Wallhack-2025</loc>" >> sitemap.xml
+          echo "    <lastmod>$(date '+%Y-%m-%d')</lastmod>" >> sitemap.xml
+          echo '    <changefreq>daily</changefreq>' >> sitemap.xml
+          echo '  </url>' >> sitemap.xml
+          echo '</urlset>' >> sitemap.xml
+
+      - name: Pull latest changes from remote repository
+        run: |
+          git pull origin main
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "Blood Stike Aimbot ESP Wallhack 2025"
+          git config --global user.email "blood-stike-hack@github.com"
+          git add README.md sitemap.xml
+          git commit -m "Update: Updated README and Sitemap"
+          git push origin main
